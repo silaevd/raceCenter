@@ -2,6 +2,9 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Login from '@/components/login';
 import Dashboard from '@/components/dashboard';
+import News from '@/components/news';
+import Eventlist from '@/components/eventlist';
+import Event from '@/components/event';
 import { isEmpty } from 'lodash';
 import { getToken } from '@/directive/auth';
 
@@ -17,10 +20,26 @@ export default (store) => {
     mode: 'history',
     routes: [
       {
+        path: '/',
+        component: News,
+        name: 'News'
+      },
+      {
+        path: '/eventlist',
+        component: Eventlist,
+        name: 'Eventlist'
+      },
+      {
+        path: '/event',
+        component: Event,
+        name: 'Event'
+      },
+      {
         path: '/login',
         component: Login,
-      }, {
-        path: '/',
+      },
+      {
+        path: '/dashboard',
         component: Dashboard,
         meta: {
           requiresAuth: true,
