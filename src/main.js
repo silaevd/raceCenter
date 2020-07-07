@@ -7,7 +7,9 @@ import routes from '@/router';
 import store from '@/store';
 import '@/assets/styles/variables.scss';
 import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/carousel.css';
+import 'element-ui/lib/theme-chalk/index.css';
+// import 'element-ui/lib/theme-chalk/form-item.css';
+// import 'element-ui/lib/theme-chalk/carousel.css';
 import 'font-awesome/css/font-awesome.min.css';
 
 const router = routes(store);
@@ -15,7 +17,7 @@ const router = routes(store);
 Vue.use(ElementUI);
 Vue.config.productionTip = false;
 
-/* eslint-disable no-new */
+/* eslint-disable */
 new Vue({
   el: '#app',
   router,

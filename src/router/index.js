@@ -32,7 +32,10 @@ export default (store) => {
       {
         path: '/event',
         component: Event,
-        name: 'Event'
+        name: 'Event',
+        meta: {
+          requiresAuth: true,
+        }
       },
       {
         path: '/login',

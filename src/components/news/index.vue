@@ -2,14 +2,14 @@
     <section class="news">
 
         <template>
-            <el-carousel :interval="5000" arrow="always">
-                <el-carousel-item v-for="item in 4" :key="item">
-                    <h3>{{ item }}</h3>
+            <el-carousel :interval="5000"  height="333px" type="card" arrow="always">
+                <el-carousel-item v-for="item in carouselItems" :key="item">
+                  <img :src="item" alt="">
                 </el-carousel-item>
             </el-carousel>
         </template>
 
-        <h1 class="section-title">Новости</h1>
+<!--        <h1 class="section-title">Новости</h1>-->
         <div class="news-items">
             <div class="news-item card">
                 <div class="news-item-header">
@@ -49,7 +49,10 @@
     data() {
       return {
         carouselItems: [
-
+          "https://www.operationsports.com/wp-content/uploads/2018/11/ACC_03-1024x576.jpg",
+          "https://i.ytimg.com/vi/Pxa6ibylQ_M/maxresdefault.jpg",
+          "https://avatars.mds.yandex.net/get-zen_doc/1101877/pub_5d404ebcbf50d51c1735ab82_5d404f570ce57b1c3ed25346/scale_1200",
+          "https://i.ytimg.com/vi/sxhoDcIMpG8/maxresdefault.jpg"
         ]
       };
     },
@@ -59,6 +62,17 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+
+    .el-carousel {
+      margin-bottom: 50px;
+    }
+    .el-carousel__item {
+      img {
+        width: 100%;
+        height: auto;
+        border: 3px solid var(--accent-second-color);
+      }
+    }
     .news {
         padding: 0 15px;
     }
