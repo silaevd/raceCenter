@@ -5,12 +5,12 @@ import Vue from 'vue';
 import App from '@/components/App';
 import routes from '@/router';
 import store from '@/store';
-import '@/assets/styles/variables.scss';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 // import 'element-ui/lib/theme-chalk/form-item.css';
 // import 'element-ui/lib/theme-chalk/carousel.css';
 import 'font-awesome/css/font-awesome.min.css';
+import '@/assets/styles/variables.scss';
 
 const router = routes(store);
 

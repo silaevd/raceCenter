@@ -5,6 +5,7 @@ import Dashboard from '@/components/dashboard';
 import News from '@/components/news';
 import Eventlist from '@/components/eventlist';
 import Event from '@/components/event';
+import Profile from '@/components/profile';
 import { isEmpty } from 'lodash';
 import { getToken } from '@/directive/auth';
 
@@ -34,8 +35,13 @@ export default (store) => {
         component: Event,
         name: 'Event',
         meta: {
-          requiresAuth: true,
+          // requiresAuth: true,
         }
+      },
+      {
+        path: '/profile',
+        component: Profile,
+        name: 'Profile'
       },
       {
         path: '/login',

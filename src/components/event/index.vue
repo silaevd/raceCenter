@@ -85,10 +85,9 @@
         padding: 15px;
     }
     .event {
-        /*width: 300px;*/
-        /*height: 400px;*/
         margin-bottom: 30px;
         border: 4px solid var(--border-color);
+        border-radius: 4px;
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
         display: flex;

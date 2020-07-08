@@ -14,8 +14,8 @@
             <div class="news-item card">
                 <div class="news-item-header">
                     <div class="news-item-logo">
-                        <span>news</span>
-                        <!--                        <img src="../../public/img/acc_logo.jpg" alt="">-->
+<!--                        <span>news</span>-->
+                        <img src="https://avatars.mds.yandex.net/get-zen-logos/201842/pub_5ac9d5fffd96b16a83adaee7_5cdc3fd573f29b00b2d9908e/xh" alt="">
                     </div>
                     <div class="news-item-info">
                         <h2 class="news-item-title">Новая новость</h2>
@@ -71,6 +71,7 @@
         width: 100%;
         height: auto;
         border: 3px solid var(--accent-second-color);
+        border-radius: 4px;
       }
     }
     .news {
@@ -80,6 +81,8 @@
     .news-item {
         color: var(--text-color);
         border: 4px solid var(--border-color);
+        border-radius: 4px;
+        background: var(--card-background);
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 
@@ -94,7 +97,7 @@
             margin-right: 15px;
 
             img {
-                width: 100%;
+                width: 45px;
                 height: auto;
             }
         }

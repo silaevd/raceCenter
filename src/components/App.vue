@@ -14,7 +14,7 @@
             <div class="nav-links">
               <router-link :to="{ name: 'News'}" class="link nav-link">Новости</router-link>
               <router-link :to="{ name: 'Eventlist'}" class="link nav-link">Эвенты</router-link>
-              <router-link :to="{ name: 'Login'}" class="profile-link">
+              <router-link :to="{ name: 'Profile'}" class="profile-link">
                 <img
                   src="https://f0.pngfuel.com/png/719/561/motorcycle-helmets-racing-helmet-motorcycle-helmets-png-clip-art.png"
                   alt="" class="profile-link-img">
