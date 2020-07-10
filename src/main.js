@@ -10,6 +10,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 // import 'element-ui/lib/theme-chalk/form-item.css';
 // import 'element-ui/lib/theme-chalk/carousel.css';
 import 'font-awesome/css/font-awesome.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@/assets/styles/variables.scss';
 
 const router = routes(store);

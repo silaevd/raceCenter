@@ -1,13 +1,3 @@
-$background_dark: #121212;
-$link: #356ce8;
-$text: #353535;
-$text_white: #eaeaea;
-$text_sub: #888;
-$card_bcgd: rgb(73, 80, 87);
-$card_dark_bcgd: #1e1e1e;
-$card_chips: rgba(73, 80, 87, 0.4);
-$card_dark_chips: #2d2d2d;
-
 :root {
   --app-background-color: rgb(255, 255, 255);
   --card-background: rgb(255, 255, 255);
@@ -21,8 +11,8 @@ $card_dark_chips: #2d2d2d;
   --chips-background: rgba(73, 80, 87, 0.2);
   --chips-first-color: rgb(53, 53, 53);
   --chips-second-color: rgb(139, 0, 0);
-  //--body-background-image: url("https://steamuserimages-a.akamaihd.net/ugc/1297550106354053812/A1E66FB86E3FA6822DAF77898802FD110FF839FB/");
-  --body-background-image: url("../20200709212702.png");
+  --body-background-image: url("https://steamuserimages-a.akamaihd.net/ugc/1297550106354053812/A1E66FB86E3FA6822DAF77898802FD110FF839FB/");
+  //--body-background-image: url("../20200709212702.png");
 }
 
 [theme="dark"] {
@@ -67,7 +57,7 @@ html, body, #app, .wrpapper {
 body {
   color: var(--text-color);
   background-color: var(--app-background-color);
-  background: var(--body-background-image);
+  //background: var(--body-background-image);
   background-size: cover;
 }
 
@@ -100,7 +90,7 @@ button {
   margin: 0 auto;
 }
 a, .link {
-  color: $link;
+  color: var(--link-color);
   text-decoration: none;
   cursor: pointer;
   &:hover {
