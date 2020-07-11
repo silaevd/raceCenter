@@ -8,7 +8,7 @@
                 <img src="https://citysakh.ru/files/news/middle/76766.jpg" alt="" class="user-avatar">
                 <p class="user-login">
                     <span>Имя:</span>
-                    <span>{{ user.name }}</span>
+                    <span>{{ user.username }}</span>
                 </p>
                 <p class="user-birthdate">
                     <span>Дата:</span>
