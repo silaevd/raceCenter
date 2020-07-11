@@ -1,8 +1,8 @@
 <template>
     <el-form ref="form" :rules="rules" :model="form" class="elform">
-        <!-- Account -->
-        <el-form-item prop="account">
-            <el-input placeholder="e-mail" v-model="form.account" clearable>
+        <!-- email -->
+        <el-form-item prop="email">
+            <el-input placeholder="e-mail" v-model="form.email" clearable>
                 <template slot="prepend">
           <span class="icon is-small">
             <i class="fa fa-user"></i>
@@ -28,24 +28,6 @@
     </el-form>
 </template>
 
-<!--<template>-->
-<!--  <form ref="form" :rules="rules" :model="form">-->
-<!--    &lt;!&ndash; Account &ndash;&gt;-->
-<!--    <div prop="account">-->
-<!--      <input placeholder="Account" v-model="form.account" clearable></input>-->
-<!--    </div>-->
-<!--    &lt;!&ndash; Password &ndash;&gt;-->
-<!--    <div prop="password">-->
-<!--      <input type="password" placeholder="Password" v-model="form.password" clearable></input>-->
-<!--    </div>-->
-
-<!--    <div>-->
-<!--      <button class="button" @click="submit">Войти</button>-->
-<!--      &lt;!&ndash;      <el-button @click="clear">Clear</el-button>&ndash;&gt;-->
-<!--    </div>-->
-<!--  </form>-->
-<!--</template>-->
-
 <script>
   import { mapState, mapActions } from 'vuex';
 
@@ -53,13 +35,13 @@
     name: 'login-form',
     data: () => ({
       form: {
-        account: '',
+        email: '',
         password: '',
       },
       rules: {
-        account: [
-          { required: true, message: 'account is required', trigger: 'blur' },
-          { min: 6, max: 12, message: 'account must be between 6 and 12 characters', trigger: 'blur' },
+        email: [
+          { required: true, message: 'email is required', trigger: 'blur' },
+          { min: 0, max: 160, message: 'email must be between 6 and 12 characters', trigger: 'blur' },
         ],
         password: [
           { required: true, message: 'password is required', trigger: 'blur' },
@@ -87,7 +69,7 @@
       },
       clear() {
         const { form } = this;
-        form.account = '';
+        form.email = '';
         form.password = '';
       },
     },

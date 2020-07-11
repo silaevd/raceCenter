@@ -35,7 +35,7 @@ export default (store) => {
         component: Event,
         name: 'Event',
         meta: {
-          // requiresAuth: true,
+          requiresAuth: true,
         }
       },
       {

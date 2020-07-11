@@ -9,22 +9,23 @@ const state = {
   request: false,
   failure: null,
   token: '',
-  user: {},
+  user: {
+  },
 };
 
 const mutations = {
   AUTH_REQUEST: (state) => {
     state.request = true;
   },
-  AUTH_SUCCESS: (state, { token, user }) => {
+  AUTH_SUCCESS: (state, user) => {
     state.request = false;
     state.failure = null;
-    state.token = token;
+    state.token = user.token;
     state.user = user;
   },
   AUTH_FAILURE: (state, error) => {
     state.request = false;
-    state.failure = error.response.data.code;
+    state.failure = error.response;
   },
   CLEAR_USER: (state) => {
     state.token = null;
@@ -42,9 +43,10 @@ const actions = {
   login: async ({ commit }, form) => {
     commit('AUTH_REQUEST');
     try {
-      const { data } = await login({ ...form });
-      commit('AUTH_SUCCESS', data.result);
-      setToken(data.result.token);
+      const data = await login({ ...form });
+      commit('AUTH_SUCCESS', data.data);
+      setToken(data.data.token);
+      console.log(data.data)
       return true;
     } catch (error) {
       commit('AUTH_FAILURE', error);
@@ -65,12 +67,13 @@ const actions = {
   },
   getAuthUser: async ({ commit }) => {
     const { data } = await getAuthUser();
-    commit('SET_USER', data.result.user);
+    commit('SET_USER', data);
   },
 };
 
 const getters = {
-  username: state => state.user.name,
+  username: state => state.user.username,
+  user: state => state.user,
 };
 
 export default {

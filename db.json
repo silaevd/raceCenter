@@ -22,6 +22,8 @@
       "user":
       {
         "name": "vince",
+        "birthDate": "25.02.1981",
+        "location1:" : "Russia",
         "active": 1
       }
     }

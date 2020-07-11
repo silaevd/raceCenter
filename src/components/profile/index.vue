@@ -8,15 +8,15 @@
                 <img src="https://citysakh.ru/files/news/middle/76766.jpg" alt="" class="user-avatar">
                 <p class="user-login">
                     <span>Имя:</span>
-                    <span>Ivan Ivanov</span>
+                    <span>{{ user.name }}</span>
                 </p>
                 <p class="user-birthdate">
                     <span>Дата:</span>
-                    <span>26.03.1993</span>
+                    <span>{{ user.birthDate }}</span>
                 </p>
                 <p class="user-location">
                     <span>Страна:</span>
-                    <span>Россия</span>
+                    <span>{{ user.location1 }}</span>
                 </p>
                 <div class="user-links">
                     <a href="" class="steam">
@@ -45,10 +45,13 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
+
   export default {
     name: 'profile',
     props: {
-    }
+    },
+    computed: mapGetters('auth', ['user'])
   };
 </script>
 
