@@ -31,13 +31,17 @@
                     <a href="" class="discord">
                         <i class="fab fa-discord"></i>
                     </a>
-                    <a href="" class="vk">
+                    <a href="" class="vk" disabled="disabled">
                         <i class="fab fa-vk"></i>
                     </a>
                 </div>
                 <div class="edit">
                     <button>Редактировать</button>
                 </div>
+                <div class="logout">
+                    <button>выйти</button>
+                </div>
+
             </div>
         </div>
 
@@ -56,6 +60,7 @@
 </script>
 
 <style scoped lang="scss">
+    a[disabled] { pointer-events: none; }
     .user {
 
 
@@ -69,6 +74,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
         }
 
         &-avatar {
@@ -107,6 +113,7 @@
         }
 
         .edit {
+            margin-bottom: 15px;
             button {
                 border-radius: 4px;
             }

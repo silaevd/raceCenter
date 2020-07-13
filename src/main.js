@@ -6,13 +6,14 @@ import App from '@/components/App';
 import routes from '@/router';
 import store from '@/store';
 import ElementUI from 'element-ui';
+import VueResource from 'vue-resource';
 import 'element-ui/lib/theme-chalk/index.css';
 // import 'element-ui/lib/theme-chalk/form-item.css';
 // import 'element-ui/lib/theme-chalk/carousel.css';
 import 'font-awesome/css/font-awesome.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '@/assets/styles/variables.scss';
-import VueResource from 'vue-resource';
+
 
 const router = routes(store);
 
