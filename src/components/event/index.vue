@@ -72,11 +72,11 @@
 </template>
 
 <script>
-    export default {
-        name: 'Event',
-        props: {
-        }
-    }
+export default {
+  name: 'Event',
+  props: {
+  },
+};
 </script>
 
 <style lang="scss" scoped>

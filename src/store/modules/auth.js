@@ -44,9 +44,8 @@ const actions = {
     commit('AUTH_REQUEST');
     try {
       const data = await login({ ...form });
-      commit('AUTH_SUCCESS', data.data);
-      setToken(data.data.token);
-      console.log(data.data)
+      commit('AUTH_SUCCESS', data.data.data);
+      setToken(data.data.data.token);
       return true;
     } catch (error) {
       commit('AUTH_FAILURE', error);
@@ -67,7 +66,7 @@ const actions = {
   },
   getAuthUser: async ({ commit }) => {
     const { data } = await getAuthUser();
-    commit('SET_USER', data);
+    commit('SET_USER', data.data);
   },
 };
 

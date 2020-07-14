@@ -23,25 +23,28 @@ export default (store) => {
       {
         path: '/',
         component: News,
-        name: 'News'
+        name: 'News',
       },
       {
         path: '/eventlist',
         component: Eventlist,
-        name: 'Eventlist'
+        name: 'Eventlist',
       },
       {
         path: '/event',
         component: Event,
         name: 'Event',
         meta: {
-          // requiresAuth: true,
-        }
+          requiresAuth: true,
+        },
       },
       {
         path: '/profile',
         component: Profile,
-        name: 'Profile'
+        name: 'Profile',
+        meta: {
+          requiresAuth: true,
+        },
       },
       {
         path: '/login',
@@ -78,6 +81,5 @@ export default (store) => {
       next();
     }
   });
-
   return router;
 };

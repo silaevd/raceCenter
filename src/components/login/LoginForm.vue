@@ -29,51 +29,51 @@
 </template>
 
 <script>
-  import { mapState, mapActions } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
-  export default {
-    name: 'login-form',
-    data: () => ({
-      form: {
-        email: '',
-        password: '',
-      },
-      rules: {
-        email: [
-          { required: true, message: 'email is required', trigger: 'blur' },
-          { min: 0, max: 160, message: 'email must be between 6 and 12 characters', trigger: 'blur' },
-        ],
-        password: [
-          { required: true, message: 'password is required', trigger: 'blur' },
-        ],
-      },
+export default {
+  name: 'login-form',
+  data: () => ({
+    form: {
+      email: '',
+      password: '',
+    },
+    rules: {
+      email: [
+        { required: true, message: 'email is required', trigger: 'blur' },
+        { min: 0, max: 160, message: 'email must be between 6 and 12 characters', trigger: 'blur' },
+      ],
+      password: [
+        { required: true, message: 'password is required', trigger: 'blur' },
+      ],
+    },
+  }),
+  computed: {
+    ...mapState('auth', {
+      authRequest: 'request',
+      authFailure: 'failure',
     }),
-    computed: {
-      ...mapState('auth', {
-        authRequest: 'request',
-        authFailure: 'failure',
-      }),
-    },
-    methods: {
-      ...mapActions('auth', ['login']),
-      submit() {
-        this.$refs.form.validate(async (valid) => {
-          if (valid) {
-            const { form } = this;
-            const isSuccess = await this.login(form);
-            if (isSuccess) {
-              this.$router.push('/');
-            }
+  },
+  methods: {
+    ...mapActions('auth', ['login']),
+    submit() {
+      this.$refs.form.validate(async (valid) => {
+        if (valid) {
+          const { form } = this;
+          const isSuccess = await this.login(form);
+          if (isSuccess) {
+            this.$router.push('/');
           }
-        });
-      },
-      clear() {
-        const { form } = this;
-        form.email = '';
-        form.password = '';
-      },
+        }
+      });
     },
-  };
+    clear() {
+      const { form } = this;
+      form.email = '';
+      form.password = '';
+    },
+  },
+};
 </script>
 
 <style lang="scss">

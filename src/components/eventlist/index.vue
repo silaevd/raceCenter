@@ -31,18 +31,18 @@
 </template>
 
 <script>
-    export default {
-        name: 'Eventlist',
-        props: {
-        },
-        data() {
-            return {
-                trackName: '',
-            }
-        },
-        mounted() {
-        }
-    }
+export default {
+  name: 'Eventlist',
+  props: {
+  },
+  data() {
+    return {
+      trackName: '',
+    };
+  },
+  mounted() {
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -23,19 +23,33 @@
                     </div>
                 </div>
                 <div class="news-item-body">
-                    <p class="news-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi fugit
-                        optio rem? Ab ad alias aliquam aperiam dolorem explicabo facilis incidunt ipsum iusto laboriosam
-                        laudantium minima nisi nostrum numquam officia optio perspiciatis quae quibusdam ut, vel, vero
-                        voluptatibus voluptatum! Assumenda autem consequuntur dolor, dolore dolorem doloribus eligendi
-                        esse est et excepturi explicabo fuga in ipsum laudantium magnam molestias necessitatibus
-                        obcaecati placeat quasi quis quo rem repellendus reprehenderit sequi similique sit veritatis. At
-                        enim explicabo, harum iure nihil optio quasi voluptatum. A aliquid consequatur consequuntur
-                        debitis doloremque, est excepturi harum hic ipsa libero maiores natus perferendis repudiandae
-                        sed tempore. Ab aspernatur at beatae cum labore magnam, modi neque officiis soluta vitae! At
-                        atque dicta earum illo necessitatibus nihil similique temporibus, veritatis. Architecto
-                        aspernatur culpa cupiditate, deleniti dolore eaque ex, facere iusto libero magni, maxime
-                        similique vitae. Asperiores autem consequatur, corporis ea incidunt, obcaecati pariatur porro
-                        rerum suscipit vel vero voluptate! Accusamus.</p>
+                    <p class="news-item-text">
+                      Lorem ipsum dolor sit amet, consectetur
+                      adipisicing elit. Eligendi fugit
+                      optio rem? Ab ad alias aliquam aperiam dolorem
+                      explicabo facilis incidunt ipsum iusto laboriosam
+                      laudantium minima nisi nostrum numquam officia
+                      optio perspiciatis quae quibusdam ut, vel, vero
+                      voluptatibus voluptatum! Assumenda autem
+                      consequuntur dolor, dolore dolorem doloribus eligendi
+                      esse est et excepturi explicabo fuga in
+                      ipsum laudantium magnam molestias necessitatibus
+                      obcaecati placeat quasi quis quo rem
+                      repellendus reprehenderit sequi similique sit veritatis. At
+                      enim explicabo, harum iure nihil optio quasi
+                      voluptatum. A aliquid consequatur consequuntur
+                      debitis doloremque, est
+                      excepturi harum hic ipsa libero maiores natus perferendis repudiandae
+                      sed tempore. Ab aspernatur at
+                      beatae cum labore magnam, modi neque officiis soluta vitae! At
+                      atque dicta earum illo necessitatibus
+                      nihil similique temporibus, veritatis. Architecto
+                      aspernatur culpa cupiditate, deleniti
+                      dolore eaque ex, facere iusto libero magni, maxime
+                      similique vitae. Asperiores autem consequatur,
+                      corporis ea incidunt, obcaecati pariatur porro
+                      rerum suscipit vel vero voluptate! Accusamus.
+                    </p>
                 </div>
                 <div class="news-item-footer"></div>
             </div>
@@ -44,20 +58,20 @@
 </template>
 
 <script>
-  export default {
-    name: 'News',
-    data() {
-      return {
-        carouselItems: [
-          "https://www.operationsports.com/wp-content/uploads/2018/11/ACC_03-1024x576.jpg",
-          "https://i.ytimg.com/vi/Pxa6ibylQ_M/maxresdefault.jpg",
-          "https://avatars.mds.yandex.net/get-zen_doc/1101877/pub_5d404ebcbf50d51c1735ab82_5d404f570ce57b1c3ed25346/scale_1200",
-          "https://i.ytimg.com/vi/sxhoDcIMpG8/maxresdefault.jpg"
-        ]
-      };
-    },
-    props: {}
-  };
+export default {
+  name: 'News',
+  data() {
+    return {
+      carouselItems: [
+        'https://www.operationsports.com/wp-content/uploads/2018/11/ACC_03-1024x576.jpg',
+        'https://i.ytimg.com/vi/Pxa6ibylQ_M/maxresdefault.jpg',
+        'https://avatars.mds.yandex.net/get-zen_doc/1101877/pub_5d404ebcbf50d51c1735ab82_5d404f570ce57b1c3ed25346/scale_1200',
+        'https://i.ytimg.com/vi/sxhoDcIMpG8/maxresdefault.jpg',
+      ],
+    };
+  },
+  props: {},
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

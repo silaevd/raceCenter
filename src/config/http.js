@@ -7,11 +7,13 @@ axios.defaults.baseURL = process.env.API_HOST;
 
 export default (store, router) => {
   axios.interceptors.request.use((config) => {
+    const resConfig = config;
     if (window.location.pathname !== '/login' && !config.headers.Authorization) {
-      config.headers.Authorization = `Bearer ${store.state.auth.token}`;
+      /* eslint-disable no-param-reassign */
+      resConfig.headers.common['X-ACCOUNT-TOKEN'] = store.state.auth.token;
     }
 
-    return config;
+    return resConfig;
   }, error => Promise.reject(error));
 
   axios.interceptors.response.use(response => response, (error) => {
