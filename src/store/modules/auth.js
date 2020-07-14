@@ -66,7 +66,7 @@ const actions = {
   },
   getAuthUser: async ({ commit }) => {
     const { data } = await getAuthUser();
-    commit('SET_USER', data);
+    commit('SET_USER', data.data);
   },
 };
 

@@ -11,12 +11,8 @@
                     <span>{{ user.username }}</span>
                 </p>
                 <p class="user-birthdate">
-                    <span>Дата:</span>
-                    <span>{{ user.birthDate }}</span>
-                </p>
-                <p class="user-location">
-                    <span>Страна:</span>
-                    <span>{{ user.location1 }}</span>
+                    <span>Email:</span>
+                    <span>{{ user.email }}</span>
                 </p>
                 <div class="user-links">
                     <a href="" class="steam">
