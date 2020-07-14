@@ -44,9 +44,9 @@ const actions = {
     commit('AUTH_REQUEST');
     try {
       const data = await login({ ...form });
-      commit('AUTH_SUCCESS', data.data);
-      setToken(data.data.token);
-      console.log(data.data)
+      commit('AUTH_SUCCESS', data.data.data);
+      console.log(data.data.data.token)
+      setToken(data.data.data.token);
       return true;
     } catch (error) {
       commit('AUTH_FAILURE', error);
