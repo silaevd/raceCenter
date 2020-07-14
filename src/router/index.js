@@ -23,12 +23,12 @@ export default (store) => {
       {
         path: '/',
         component: News,
-        name: 'News'
+        name: 'News',
       },
       {
         path: '/eventlist',
         component: Eventlist,
-        name: 'Eventlist'
+        name: 'Eventlist',
       },
       {
         path: '/event',
@@ -36,12 +36,12 @@ export default (store) => {
         name: 'Event',
         meta: {
           // requiresAuth: true,
-        }
+        },
       },
       {
         path: '/profile',
         component: Profile,
-        name: 'Profile'
+        name: 'Profile',
       },
       {
         path: '/login',

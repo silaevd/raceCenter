@@ -49,14 +49,14 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex';
 
-  export default {
-    name: 'profile',
-    props: {
-    },
-    computed: mapGetters('auth', ['user'])
-  };
+export default {
+  name: 'profile',
+  props: {
+  },
+  computed: mapGetters('auth', ['user']),
+};
 </script>
 
 <style scoped lang="scss">
