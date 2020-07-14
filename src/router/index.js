@@ -71,16 +71,13 @@ export default (store) => {
     }
 
     if (token && (to.path === '/login' || to.path === '/') && !isEmpty(user)) {
-      console.log(5555555)
       next();
     } else if (!token && requiresAuth) {
-      console.log(2222222)
       next({
         path: '/login',
         query: { redirect: to.fullPath },
       });
     } else {
-      console.log(11111)
       next();
     }
   });

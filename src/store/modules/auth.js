@@ -45,7 +45,6 @@ const actions = {
     try {
       const data = await login({ ...form });
       commit('AUTH_SUCCESS', data.data.data);
-      console.log(data.data.data.token)
       setToken(data.data.data.token);
       return true;
     } catch (error) {
