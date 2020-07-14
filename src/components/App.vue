@@ -83,7 +83,7 @@ export default {
     }
   },
   watch: {
-    darkMode: () => {
+    darkMode: function () {
       const htmlElement = document.documentElement;
       if (this.darkMode) {
         localStorage.setItem('theme', 'dark');
