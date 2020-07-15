@@ -129,7 +129,7 @@ export default {
                 font-size: 16px;
                 border: none;
                 outline: none;
-                background: transparent;
+                background: transparent !important;
                 display: block;
                 position: absolute;
                 width: 100%;

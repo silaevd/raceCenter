@@ -6,6 +6,9 @@ import News from '@/components/news';
 import Eventlist from '@/components/eventlist';
 import Event from '@/components/event';
 import Profile from '@/components/profile';
+import Admin from '@/components/admin';
+import test1 from '@/components/admin/test1';
+import test2 from '@/components/admin/test2';
 import { isEmpty } from 'lodash';
 import { getToken } from '@/directive/auth';
 
@@ -45,6 +48,23 @@ export default (store) => {
         meta: {
           requiresAuth: true,
         },
+      },
+      {
+        path: '/admin',
+        component: Admin,
+        name: 'Admin',
+        meta: {
+          // requiresAuth: true,
+        },
+        children: [
+          // UserHome will be rendered inside User's <router-view>
+          // when /user/:id is matched
+          { path: 'test1', component: test1 },
+
+          // UserProfile will be rendered inside User's <router-view>
+          // when /user/:id/profile is matched
+          { path: 'test2', component: test2 },
+        ]
       },
       {
         path: '/login',
