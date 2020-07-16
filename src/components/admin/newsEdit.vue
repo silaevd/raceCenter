@@ -1,16 +1,18 @@
 <template>
-    <section class="admin">
+    <div class="newsEdit">
 
-        <h1>test1</h1>
-    </section>
+        <h1>newsEdit</h1>
+        <h1>{{ newsId }}</h1>
+
+    </div>
 </template>
 
 <script>
   export default {
-    name: 'News',
+    name: 'newsEdit',
     data() {
       return {
-
+        newsId: this.$route.params.id,
       };
     },
     props: {},

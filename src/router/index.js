@@ -7,8 +7,9 @@ import Eventlist from '@/components/eventlist';
 import Event from '@/components/event';
 import Profile from '@/components/profile';
 import Admin from '@/components/admin';
-import test1 from '@/components/admin/test1';
-import test2 from '@/components/admin/test2';
+import newsList from '@/components/admin/newsList';
+import newsEdit from '@/components/admin/newsEdit';
+import eventsList from '@/components/admin/eventsList';
 import { isEmpty } from 'lodash';
 import { getToken } from '@/directive/auth';
 
@@ -57,13 +58,9 @@ export default (store) => {
           // requiresAuth: true,
         },
         children: [
-          // UserHome will be rendered inside User's <router-view>
-          // when /user/:id is matched
-          { path: 'test1', component: test1 },
-
-          // UserProfile will be rendered inside User's <router-view>
-          // when /user/:id/profile is matched
-          { path: 'test2', component: test2 },
+          { path: 'newsList', component: newsList, name: 'newsList', props: true },
+          { path: 'eventsList', component: eventsList, name: 'eventsList', props: true },
+          { path: 'newsEdit/id:id', component: newsEdit, name: 'newsEdit', props: true },
         ]
       },
       {

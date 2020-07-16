@@ -1,8 +1,8 @@
 <template>
-    <section class="admin">
+    <div class="admin">
 
-        <h1>test2</h1>
-    </section>
+        <h1>Эвенты</h1>
+    </div>
 </template>
 
 <script>
