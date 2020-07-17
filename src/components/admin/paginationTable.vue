@@ -1,44 +1,38 @@
 <template>
-    <div class="newsList">
-
-        <template>
-            <el-table
-                    :data="tableData.filter(data => !search ||
+    <el-table
+            :data="tableData.filter(data => !search ||
                     data.author.username.toLowerCase().includes(search.toLowerCase()))"
-                    style="width: 100%">
-                <el-table-column
-                        label="Date"
-                        prop="created_at">
-                </el-table-column>
-                <el-table-column
-                        label="Title"
-                        prop="title">
-                </el-table-column>
-                <el-table-column
-                        align="right">
-                    <template slot="header" slot-scope="scope">
-                        <el-input
-                                v-model="search"
-                                size="mini"
-                                placeholder="Type to search"/>
-                    </template>
-                    <template slot-scope="scope">
-                        <router-link :to="{
+            style="width: 100%">
+        <el-table-column
+                label="Date"
+                prop="created_at">
+        </el-table-column>
+        <el-table-column
+                label="Title"
+                prop="title">
+        </el-table-column>
+        <el-table-column
+                align="right">
+            <template slot="header" slot-scope="scope">
+                <el-input
+                        v-model="search"
+                        size="mini"
+                        placeholder="Type to search"/>
+            </template>
+            <template slot-scope="scope">
+                <router-link :to="{
                             name: 'newsEdit',
                             params: {
                                 id: scope.row.id,
                                 title: scope.row.title,
                                 content: scope.row.content,
                         }}">
-                            <i class="far fa-edit"></i>
-                        </router-link>
-                    </template>
+                    <i class="far fa-edit"></i>
+                </router-link>
+            </template>
 
-                </el-table-column>
-            </el-table>
-        </template>
-
-    </div>
+        </el-table-column>
+    </el-table>
 </template>
 
 <script>

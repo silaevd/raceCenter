@@ -58,7 +58,7 @@ export default {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                min-width: 150px;
+                min-width: 160px;
                 background: var(--chips-background);
                 padding: 5px 15px;
                 margin-bottom: 2px;
