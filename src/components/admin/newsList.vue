@@ -4,7 +4,7 @@
         <template>
             <el-table
                     :data="tableData.filter(data => !search ||
-                    data.author.username.toLowerCase().includes(search.toLowerCase()))"
+                    data.title.toLowerCase().includes(search.toLowerCase())).slice((currentPage-1)*pagesize,currentPage*pagesize)"
                     style="width: 100%">
                 <el-table-column
                         label="Date"
@@ -36,15 +36,39 @@
 
                 </el-table-column>
             </el-table>
+            <el-pagination
+                    background
+                    layout="prev, pager, next"
+                    :total="tableData.length"
+                    @current-change="current_change">
+            </el-pagination>
         </template>
-
+        {{total}}
     </div>
+
 </template>
 
 <script>
   export default {
+    methods: {
+      current_change: function(currentPage){
+        this.currentPage = currentPage;
+      },
+      totalPages: function () {
+        this.total= this.tableData.length;
+      }
+    },
+    computed:{
+
+    },
+    mounted: function () {
+      this.totalPages();
+    },
     data() {
       return {
+        total: 0,
+        pagesize: 2,
+        currentPage: 1,
         tableData: [
           {
             id: 1,
@@ -110,14 +134,7 @@
         search: '',
       };
     },
-    methods: {
-      // handleEdit(index, row) {
-      //   console.log(index, row);
-      // },
-      // handleDelete(index, row) {
-      //   console.log(index, row);
-      // }
-    },
+
   };
 </script>
 

@@ -49,7 +49,7 @@
             background: var(--chips-background);
         }
     }
-    .v-md-editor, .v-md-editor__toolbar ul li {
+    .newsEdit .v-md-editor, .v-md-editor__toolbar ul li {
         color: var(--text-color);
         background: var(--card-background);
         textarea {
