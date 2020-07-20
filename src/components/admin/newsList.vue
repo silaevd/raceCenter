@@ -40,7 +40,7 @@
             <el-pagination
                     background
                     layout="prev, pager, next"
-                    :total="tableData.length"
+                    :total="total"
                     @current-change="current_change">
             </el-pagination>
         </template>
@@ -55,14 +55,10 @@ import { getList } from '../../api/news';
 export default {
   methods: {
     current_change(currentPage) {
-      this.currentPage = currentPage;
+      getList(10, currentPage);
     },
-    totalPages() {
-      this.total = 0;
-      this.tableData = [];
-    },
-    getList() {
-      const data = getList();
+    getList(limit = 10, offset = 0) {
+      const data = getList(limit, offset);
       data.then((result) => {
         this.tableData = result.data.data;
         this.total = result.data.meta.total;
@@ -75,9 +71,6 @@ export default {
   // eslint-disable-next-line func-names
   created: function () {
     this.getList();
-  },
-  mounted() {
-    this.totalPages();
   },
   data() {
     return {
