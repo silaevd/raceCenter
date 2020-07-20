@@ -4,6 +4,7 @@
         <template>
             <el-table
                     :data="tableData.filter(data => !search ||
+                    // eslint-disable-next-line max-len
                     data.title.toLowerCase().includes(search.toLowerCase())).slice((currentPage-1)*pagesize,currentPage*pagesize)"
                     style="width: 100%">
                 <el-table-column
@@ -49,93 +50,47 @@
 </template>
 
 <script>
-  export default {
-    methods: {
-      current_change: function(currentPage){
-        this.currentPage = currentPage;
-      },
-      totalPages: function () {
-        this.total= this.tableData.length;
-      }
-    },
-    computed:{
+import { getList } from '../../api/news';
 
+export default {
+  methods: {
+    current_change(currentPage) {
+      this.currentPage = currentPage;
     },
-    mounted: function () {
-      this.totalPages();
+    totalPages() {
+      this.total = 0;
+      this.tableData = [];
     },
-    data() {
-      return {
-        total: 0,
-        pagesize: 2,
-        currentPage: 1,
-        tableData: [
-          {
-            id: 1,
-            title: "test news 1",
-            content: "<h1>ti pidr</h1><p>sam ti pidr</p>",
-            author: {
-              id: 1,
-              email: "admin@admin.admin",
-              username: "admin",
-              roles: [
-                "ROLE_ADMIN"
-              ]
-            },
-            created_at: "2020-07-17 09:13:56",
-            updated_at: "2020-07-17 09:13:56"
-          },
-          {
-            id: 2,
-            title: "test news 2",
-            content: "admin",
-            author: {
-              id: 1,
-              email: "admin@admin.admin",
-              username: "admin",
-              roles: [
-                "ROLE_ADMIN"
-              ]
-            },
-            created_at: "2020-07-17 09:13:56",
-            updated_at: "2020-07-17 09:13:56"
-          },
-          {
-            id: 3,
-            title: "test news 3",
-            content: "admin",
-            author: {
-              id: 1,
-              email: "admin@admin.admin",
-              username: "admin",
-              roles: [
-                "ROLE_ADMIN"
-              ]
-            },
-            created_at: "2020-07-17 09:13:56",
-            updated_at: "2020-07-17 09:13:56"
-          },
-          {
-            id: 4,
-            title: "test news 4",
-            content: "admin",
-            author: {
-              id: 1,
-              email: "admin@admin.admin",
-              username: "admin",
-              roles: [
-                "ROLE_ADMIN"
-              ]
-            },
-            created_at: "2020-07-17 09:13:56",
-            updated_at: "2020-07-17 09:13:56"
-          }
-        ],
-        search: '',
-      };
+    getList() {
+      const data = getList();
+      data.then((result) => {
+        this.tableData = result.data.data;
+        this.total = result.data.meta.total;
+        this.pagesize = result.data.meta.total;
+      }, error => {
+        console.error(error);
+      });
     },
+  },
+  // eslint-disable-next-line func-names
+  created: function () {
+    this.getList();
+  },
+  mounted() {
+    this.totalPages();
+  },
+  data() {
+    return {
+      total: 0,
+      pagesize: 10,
+      currentPage: 1,
+      tableData: [],
+      search: '',
+    };
+  },
 
-  };
+
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
